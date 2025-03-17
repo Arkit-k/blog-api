@@ -1,0 +1,29 @@
+{
+  "name": "blog-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "tsc",
+    "generate": "drizzle-kit generate:pg",
+    "migrate": "ts-node src/db/migrate.ts",
+    "studio": "drizzle-kit studio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "drizzle-orm": "^0.40.0",
+    "express": "^4.21.2",
+    "pg": "^8.14.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.10",
+    "drizzle-kit": "^0.30.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
