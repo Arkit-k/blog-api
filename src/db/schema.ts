@@ -14,13 +14,14 @@ export const posts = pgTable('posts', {
       id:serial('id').primaryKey(),
       title: text('title').notNull(),
       content:text('content').notNull(),
-      userid: text('user_id').references(() => users.id).notNull(),
+      userId: text('user_id').references(() => users.id).notNull(),
+      updatedAt:timestamp('updated_at').defaultNow().notNull(),
       createdAt: timestamp('created_at').defaultNow().notNull(),
 })
 export const comments = pgTable('comments', {
       id: serial('id').primaryKey(),
       content : text('content').notNull(),
       postid: integer('post_id').references(() => posts.id).notNull(),
-      userid: integer('user_id').references(()=> users.id).notNull(),
+      userId: integer('user_id').references(()=> users.id).notNull(),
       createdAt:timestamp('created_at').defaultNow().notNull()
 });
